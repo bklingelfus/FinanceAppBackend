@@ -56,7 +56,10 @@ namespace FinanceAppBackend.Controllers
 
             Response.Cookies.Append("jwt", jwt, new CookieOptions 
             {
-                HttpOnly = true
+                HttpOnly = true,
+                SameSite = none,
+                Secure = true
+
             });
 
             return Ok(new
