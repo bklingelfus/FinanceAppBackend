@@ -54,13 +54,13 @@ namespace FinanceAppBackend.Controllers
 
             var jwt = _jwtService.generate(user.Id);
 
-            Response.Cookies.Append("jwt", jwt, new CookieOptions 
-            {
-                HttpOnly = true,
-                SameSite = SameSiteMode.None,
-                Secure = true
+            // Response.Cookies.Append("jwt", jwt, new CookieOptions 
+            // {
+            //     HttpOnly = true,
+            //     SameSite = SameSiteMode.None,
+            //     Secure = true
 
-            });
+            // });
 
             return Ok(new
             {
@@ -90,14 +90,6 @@ namespace FinanceAppBackend.Controllers
         public IActionResult Logout()
         {
             Response.Cookies.Delete("jwt");
-
-            HttpCookie cookie = new HttpCookie("jwt");
-            cookie = Request.Cookies["jwt"];
-            if (cookie != null)
-            {
-                cookie.Expires = DateTime.Now.AddDays(-1);
-                Response.Cookies.Add(cookie);
-            }
 
             return Ok(new
             {
