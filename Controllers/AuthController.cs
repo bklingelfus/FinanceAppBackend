@@ -58,8 +58,8 @@ namespace FinanceAppBackend.Controllers
             {
                 HttpOnly = true,
                 SameSite = SameSiteMode.None,
-                Secure = true
-
+                Secure = true,
+                Expires = DateTime.Today.AddDays(1)
             });
 
             return Ok(new
@@ -90,6 +90,13 @@ namespace FinanceAppBackend.Controllers
         public IActionResult Logout()
         {
             Response.Cookies.Delete("jwt");
+            Response.Cookies.Append("jwt", "removed token", new CookieOptions 
+            {
+                HttpOnly = true,
+                SameSite = SameSiteMode.None,
+                Secure = true,
+                Expires = DateTime.Today.AddDays(-1)
+            });
 
             return Ok(new
             {
