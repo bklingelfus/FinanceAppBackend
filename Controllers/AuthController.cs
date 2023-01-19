@@ -54,13 +54,13 @@ namespace FinanceAppBackend.Controllers
 
             var jwt = _jwtService.generate(user.Id);
 
-            // Response.Cookies.Append("jwt", jwt, new CookieOptions 
-            // {
-            //     HttpOnly = true,
-            //     SameSite = SameSiteMode.None,
-            //     Secure = true
+            Response.Cookies.Append("jwt", jwt, new CookieOptions 
+            {
+                HttpOnly = true,
+                SameSite = SameSiteMode.None,
+                Secure = true
 
-            // });
+            });
 
             return Ok(new
             {
