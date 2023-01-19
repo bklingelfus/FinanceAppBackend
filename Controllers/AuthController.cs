@@ -64,7 +64,8 @@ namespace FinanceAppBackend.Controllers
 
             return Ok(new
             {
-                message = jwt
+                token = jwt,
+                user =  user
             });
         }
         
