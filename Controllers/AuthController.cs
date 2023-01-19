@@ -89,9 +89,10 @@ namespace FinanceAppBackend.Controllers
         [HttpPost("user/logout")]
         public IActionResult Logout()
         {
-            // Response.Cookies.Delete("jwt");
+            Response.Cookies.Delete("jwt");
 
-            var cookie = Request.Cookies["jwt"];
+            HttpCookie cookie = new HttpCookie("jwt");
+            cookie = Request.Cookies["jwt"];
             if (cookie != null)
             {
                 cookie.Expires = DateTime.Now.AddDays(-1);
