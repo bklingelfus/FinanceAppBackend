@@ -91,7 +91,7 @@ namespace FinanceAppBackend.Controllers
         {
             // Response.Cookies.Delete("jwt");
 
-            cookie = Request.Cookies["jwt"];
+            var cookie = Request.Cookies["jwt"];
             if (cookie != null)
             {
                 cookie.Expires = DateTime.Now.AddDays(-1);
