@@ -159,7 +159,7 @@ namespace FinanceAppBackend.Contexts
                     Name = list[i].Name,
                     Lastsale = Double.Parse(list[i].Lastsale.Replace("$","")),
                     Pctchange = Double.Parse(list[i].Pctchange.Replace("%",""))/100,
-                    Netchange = Double.Parse(list[i].Netchange),
+                    Netchange = Double.Parse(list[i].Netchange.Replace(",","")),
                     Marketcap = Double.Parse(list[i].Marketcap.Replace(",","")),
                 };
                 var test = GetStock(stock.Symbol);
