@@ -64,7 +64,7 @@ namespace FinanceAppBackend.Models
         [Column("date")]
         public string Date {get; set;}
         [Column("quantity")]
-        public int Quantity {get; set;}
+        public double Quantity {get; set;}
         [Column("price")]
         public double Price {get; set;}
         [Column("user")]

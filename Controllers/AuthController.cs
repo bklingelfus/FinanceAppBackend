@@ -135,11 +135,10 @@ namespace FinanceAppBackend.Controllers
                 int userId = int.Parse(token.Issuer);
                 var user = _repository.GetById(userId);
 
-                if (user.Email != dto.Email) return Unauthorized();
-
                 var editedUser = new User {
                     Name = dto.Name,
                     Email = dto.Email,
+                    Password = dto.Password,
                     ProfileImage = dto.ProfileImage,
                     DarkMode = dto.DarkMode,
                     Notifications = dto.Notifications,
