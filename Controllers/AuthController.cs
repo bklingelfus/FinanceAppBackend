@@ -104,7 +104,7 @@ namespace FinanceAppBackend.Controllers
             });
         }
 
-        [HttpDelete("user/delete")]
+        [HttpPost("user/delete")]
         public IActionResult Delete()
         {
             try 
@@ -125,7 +125,7 @@ namespace FinanceAppBackend.Controllers
             }
         }
         
-        [HttpPut("user/edit")]
+        [HttpPost("user/edit")]
         public IActionResult Update(EditDto dto)
         {
             try 
