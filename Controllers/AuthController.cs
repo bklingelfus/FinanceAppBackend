@@ -212,8 +212,8 @@ namespace FinanceAppBackend.Controllers
         }
 
         // = * = * = Query Routes = * = * =
-        [HttpGet("search/stocks")]
-        public IActionResult Search([FromQuery]SearchDto search)
+        [HttpPost("search/stocks")]
+        public IActionResult Search(SearchDto search)
         {
             return Ok(new {message = _psqlQuery.Search(search.text)});
         }
