@@ -16,7 +16,16 @@ builder.Configuration.AddConfiguration(configurationBuilder.Build());
 
 var defaultConnectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
-builder.Services.AddCors();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", builder =>
+    {
+        builder
+        .AllowAnyOrigin()
+        .AllowAnyMethod()
+        .AllowAnyHeader();
+    });
+});
 
 // var defaultConnectionString = string.Empty;
 
@@ -75,13 +84,14 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-app.UseCors(options => options
-    // .WithOrigins(new []{"https://finance-app-fe.herokuapp.com/","http://localhost:3000","http://localhost:8080","http://localhost:4200"})
-    .AllowAnyOrigin()
-    .AllowAnyHeader()
-    .AllowAnyMethod()
-    .AllowCredentials()
-);
+// app.UseCors(options => options
+//     // .WithOrigins(new []{"https://finance-app-fe.herokuapp.com/","http://localhost:3000","http://localhost:8080","http://localhost:4200"})
+//     .AllowAnyOrigin()
+//     .AllowAnyHeader()
+//     .AllowAnyMethod()
+//     .AllowCredentials()
+// );
+app.UseCors("AllowAll");
 
 app.MapControllers();
 
