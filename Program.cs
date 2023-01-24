@@ -76,7 +76,8 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.UseCors(options => options
-    .WithOrigins(new []{"https://finance-app-fe.herokuapp.com/","http://localhost:3000","http://localhost:8080","http://localhost:4200"})
+    // .WithOrigins(new []{"https://finance-app-fe.herokuapp.com/","http://localhost:3000","http://localhost:8080","http://localhost:4200"})
+    .AllowAnyOrigin()
     .AllowAnyHeader()
     .AllowAnyMethod()
     .AllowCredentials()
