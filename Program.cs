@@ -80,7 +80,7 @@ app.UseCors(options => options
     // .AllowAnyOrigin()
     .AllowAnyHeader()
     .AllowAnyMethod()
-    // .AllowCredentials()
+    .AllowCredentials()
 );
 
 app.MapControllers();
