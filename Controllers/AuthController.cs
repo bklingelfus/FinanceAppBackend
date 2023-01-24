@@ -17,6 +17,11 @@ namespace FinanceAppBackend.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
+        public AuthController()
+        {
+            HttpContext.Response.Headers.Add("Access-Control-Allow-Origin", "https://finance-app-fe.herokuapp.com/, http://localhost:3000/");
+            HttpContext.Response.Headers.Add("Access-Control-Allow-Credentials", "true");
+        }
         private readonly IUserRepository _repository;
         private readonly JwtService _jwtService;
         private readonly PsqlQuery _psqlQuery;
