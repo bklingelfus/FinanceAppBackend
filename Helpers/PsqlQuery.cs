@@ -174,7 +174,7 @@ namespace FinanceAppBackend.Contexts
         }
         public List<Stock> Search(string text) {
             //  var cs = "Host=localhost;Username=bernardo;Password=12345678;Database=financeapp";
-            var cs = "Host=ec2-34-197-84-74.compute-1.amazonaws.com;Database=dfaf1p953tnhrl;Username=qomqqxskvierbf;Password=7aa87793d162622766b62432bdc76dd6e15202503183c32ed5bc2a8d28e69466;SSL Mode=Require;Trust Server Certificate=true";
+            var cs = "Host=ec2-54-164-40-66.compute-1.amazonaws.com;Database=db922knnim6pta;Username=yvjqlztnsclnhl;Password=ac44f6730e9a768054709163134f2f927ffae19c5f6ab17599aae9cbf5a3ab48;SSL Mode=Require;Trust Server Certificate=true";
 
             List<Stock> stockList = new List<Stock>();
 
@@ -208,7 +208,7 @@ namespace FinanceAppBackend.Contexts
         }
         public List<FetchOrderDto> Fetch(int userId) {
             //  var cs = "Host=localhost;Username=bernardo;Password=12345678;Database=financeapp";
-            var cs = "Host=ec2-34-197-84-74.compute-1.amazonaws.com;Database=dfaf1p953tnhrl;Username=qomqqxskvierbf;Password=7aa87793d162622766b62432bdc76dd6e15202503183c32ed5bc2a8d28e69466;SSL Mode=Require;Trust Server Certificate=true";
+            var cs = "Host=ec2-54-164-40-66.compute-1.amazonaws.com;Database=db922knnim6pta;Username=yvjqlztnsclnhl;Password=ac44f6730e9a768054709163134f2f927ffae19c5f6ab17599aae9cbf5a3ab48;SSL Mode=Require;Trust Server Certificate=true";
             
             List<FetchOrderDto> orderList = new List<FetchOrderDto>();
 
